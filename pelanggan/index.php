@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Login Admin</title>
+    <title>Login Vendor</title>
     <!-- Custom CSS -->
     <link href="../assets/dist/css/style.min.css" rel="stylesheet">
 </head>
@@ -18,7 +18,7 @@
 <body>
     <div class="main-wrapper">
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
-            >
+            style="background:url(../assets/images/big/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box row">
                 <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(../assets/images/big/3.jpg);">
                 </div>
@@ -27,7 +27,7 @@
                         <div class="text-center">
                             <img src="../assets/images/big/icon.png" alt="wrapkit">
                         </div>
-                        <h2 class="mt-3 text-center">Login Admin</h2>
+                        <h2 class="mt-3 text-center">Login Vendor</h2>
                         <p class="text-center">Silahkan login terlebih dahulu</p>
                         <form class="mt-4" action="auth/login.php" method="POST">
                             <div class="row">
@@ -46,9 +46,10 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">
-                                    <button type="submit" class="btn btn-block btn-dark">Sign In</button>
+                                    <button type="submit" class="btn btn-block btn-dark">Login</button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
+																	Tidak punya akun? <a href="register.php" class="text-danger">Daftar</a>
                                 </div>
                             </div>
                         </form>

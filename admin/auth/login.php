@@ -16,7 +16,7 @@ if (!empty($_POST)) {
 		$_SESSION['login_adm'] = TRUE;
 		$_SESSION['data_adm']  = $data;
 
-		header('location: ../dashboard');
+		header('location: ../dashboard/index.php');
 
 	} else {
 		echo "<script>alert('Login gagal cek username password anda');

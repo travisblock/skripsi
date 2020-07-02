@@ -29,8 +29,7 @@
 														<tbody>
 															<?php
 																$no = 1;
-																$id_v = $_SESSION['data_vendor']['id_vendor'];
-																$sql = mysqli_query($conn, "SELECT * FROM paket_pernikahan WHERE id_vendor = '$id_v' AND is_delete=0 ORDER BY id_paket DESC");
+																$sql = mysqli_query($conn, "SELECT * FROM paket_pernikahan ORDER BY id_paket DESC");
 																foreach ($sql as $paket) :
 															?>
 																<tr>

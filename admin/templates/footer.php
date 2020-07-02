@@ -20,4 +20,4 @@
 
 
 <script src="../../assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../../assets/dist/js/pages/datatable/datatable-basic.init.js"></script>
+<script src="../../assets/dist/js/script.js"></script>

@@ -13,7 +13,7 @@
 						<div class="card">
 								<div class="card-body">
 										<div class="table-responsive">
-												<table id="default_order" class="table table-striped table-bordered no-wrap">
+												<table id="datatable" class="table table-striped table-bordered no-wrap">
 														<thead>
 																<tr>
 																		<th>NO</th>

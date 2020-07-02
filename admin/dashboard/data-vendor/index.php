@@ -1,7 +1,7 @@
 <div class="page-breadcrumb">
 		<div class="row">
 				<div class="col-7 align-self-center">
-						<h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Data Vendor</h3>
+						<h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Data Vendor Terverifikasi</h3>
 				</div>
 		</div>
 </div>
@@ -13,7 +13,7 @@
 						<div class="card">
 								<div class="card-body">
 										<div class="table-responsive">
-												<table id="default_order" class="table table-striped table-bordered no-wrap">
+												<table id="datatable" class="table table-striped table-bordered no-wrap">
 														<thead>
 																<tr>
 																		<th>NO</th>
