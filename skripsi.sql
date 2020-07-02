@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 01, 2020 at 06:11 AM
+-- Generation Time: Jul 02, 2020 at 07:21 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.6
 
@@ -52,6 +52,7 @@ INSERT INTO `admin` (`id_adm`, `nama`, `username`, `password`, `alamat`, `no_hp`
 
 CREATE TABLE `paket_pernikahan` (
   `id_paket` int(11) NOT NULL,
+  `id_vendor` int(11) NOT NULL,
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `harga` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `keterangan` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -62,10 +63,26 @@ CREATE TABLE `paket_pernikahan` (
 -- Dumping data for table `paket_pernikahan`
 --
 
-INSERT INTO `paket_pernikahan` (`id_paket`, `nama`, `harga`, `keterangan`, `is_delete`) VALUES
-(1, 'Paket C', '10000', 'Murahh', 1),
-(2, 'Paket hebat', '20000', 'Paket Paling Oke', 0),
-(3, 'Paket bukan sembarang paket Y', '100000', 'Paket thebeast', 0);
+INSERT INTO `paket_pernikahan` (`id_paket`, `id_vendor`, `nama`, `harga`, `keterangan`, `is_delete`) VALUES
+(5, 2, 'Pekatt', '20103103', 'adasdfa', 0),
+(6, 3, 'Paket bukan sembarang paket Y', '200001000', 'OKEOKE', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pelanggan`
+--
+
+CREATE TABLE `pelanggan` (
+  `id_pelanggan` int(11) NOT NULL,
+  `nama_pelanggan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ktp` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telp` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alamat` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tgl_daftar` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -91,7 +108,8 @@ CREATE TABLE `vendor` (
 --
 
 INSERT INTO `vendor` (`id_vendor`, `nama_vendor`, `nama_pemilik`, `ktp`, `telp`, `tgl_daftar`, `alamat`, `username`, `password`, `status`) VALUES
-(2, 'Alfa FAN', 'Ahmad Fafa', 'f44faa637039905e3e9ab099a86409ae5efb5f508be6a.png', '89652128123', '2020-06-30', 'Dawe Kudus', 'alafan', '250cf8b51c773f3f8dc8b4be867a9a02', 1);
+(2, 'Alfa FAN', 'Ahmad Fafa', 'f44faa637039905e3e9ab099a86409ae5efb5f508be6a.png', '89652128123', '2020-06-30', 'Dawe Kudus', 'alafan', '250cf8b51c773f3f8dc8b4be867a9a02', 0),
+(3, 'AntonIO Project', 'Steven Antonio', '4afc1d958d15373d17bc7b2d7d2dee615efbcaf5eca2c.png', '8212323131031', '2020-07-01', 'Jakarta', 'antonio', '202cb962ac59075b964b07152d234b70', 1);
 
 --
 -- Indexes for dumped tables
@@ -107,7 +125,14 @@ ALTER TABLE `admin`
 -- Indexes for table `paket_pernikahan`
 --
 ALTER TABLE `paket_pernikahan`
-  ADD PRIMARY KEY (`id_paket`);
+  ADD PRIMARY KEY (`id_paket`),
+  ADD KEY `id_vendor` (`id_vendor`);
+
+--
+-- Indexes for table `pelanggan`
+--
+ALTER TABLE `pelanggan`
+  ADD PRIMARY KEY (`id_pelanggan`);
 
 --
 -- Indexes for table `vendor`
@@ -129,13 +154,29 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `paket_pernikahan`
 --
 ALTER TABLE `paket_pernikahan`
-  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `pelanggan`
+--
+ALTER TABLE `pelanggan`
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `vendor`
 --
 ALTER TABLE `vendor`
-  MODIFY `id_vendor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_vendor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `paket_pernikahan`
+--
+ALTER TABLE `paket_pernikahan`
+  ADD CONSTRAINT `paket_pernikahan_ibfk_1` FOREIGN KEY (`id_vendor`) REFERENCES `vendor` (`id_vendor`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
