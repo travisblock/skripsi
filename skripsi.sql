@@ -56,12 +56,13 @@ CREATE TABLE `paket_pernikahan` (
   `id_vendor` int(11) NOT NULL,
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `harga` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto_paket` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `keterangan` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_delete` int(11) NOT NULL,
   PRIMARY KEY (`id_paket`),
   KEY `id_vendor` (`id_vendor`),
   CONSTRAINT `paket_pernikahan_ibfk_1` FOREIGN KEY (`id_vendor`) REFERENCES `vendor` (`id_vendor`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +71,7 @@ CREATE TABLE `paket_pernikahan` (
 
 LOCK TABLES `paket_pernikahan` WRITE;
 /*!40000 ALTER TABLE `paket_pernikahan` DISABLE KEYS */;
-INSERT INTO `paket_pernikahan` VALUES (5,2,'Pekatt','20103103','adasdfa',0),(6,3,'Paket bukan sembarang paket Y','200001000','OKEOKE',1);
+INSERT INTO `paket_pernikahan` VALUES (5,2,'Pekatt','20103103','','adasdfa',0),(6,3,'Paket bukan sembarang paket Y','200001000','','OKEOKE',1),(7,4,'Paket Gw','12001021','logo-ps-blue-15effa5b9e7812.png','paket apik',0);
 /*!40000 ALTER TABLE `paket_pernikahan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,12 +120,14 @@ CREATE TABLE `vendor` (
   `ktp` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telp` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tgl_daftar` date NOT NULL,
+  `tgl_verif` date NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alamat` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id_vendor`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +136,7 @@ CREATE TABLE `vendor` (
 
 LOCK TABLES `vendor` WRITE;
 /*!40000 ALTER TABLE `vendor` DISABLE KEYS */;
-INSERT INTO `vendor` VALUES (2,'Alfa FAN','Ahmad Fafa','f44faa637039905e3e9ab099a86409ae5efb5f508be6a.png','89652128123','2020-06-30','Dawe Kudus','alafan','250cf8b51c773f3f8dc8b4be867a9a02',0),(3,'AntonIO Project','Steven Antonio','4afc1d958d15373d17bc7b2d7d2dee615efbcaf5eca2c.png','8212323131031','2020-07-01','Jakarta','antonio','202cb962ac59075b964b07152d234b70',1);
+INSERT INTO `vendor` VALUES (2,'Alfa FAN','Ahmad Fafa','f44faa637039905e3e9ab099a86409ae5efb5f508be6a.png','89652128123','2020-06-30','0000-00-00','emailmu69@gmail.com','Dawe Kudus','alafan','250cf8b51c773f3f8dc8b4be867a9a02',1),(3,'AntonIO Project','Steven Antonio','4afc1d958d15373d17bc7b2d7d2dee615efbcaf5eca2c.png','8212323131031','2020-07-01','2020-07-03','cekemailku@gmail.com','Jakarta','antonio','202cb962ac59075b964b07152d234b70',1),(4,'VendorCVC','ajid gantenk','09bd68aed1ad2d33ae47d94d0ffeea0c5eff2bb1c2e11.png','8328312383','2020-07-03','2020-07-03','emailapaini@gmail.com','kudus','ajid','202cb962ac59075b964b07152d234b70',1);
 /*!40000 ALTER TABLE `vendor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -146,4 +149,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-03  7:17:53
+-- Dump completed on 2020-07-04  6:50:57

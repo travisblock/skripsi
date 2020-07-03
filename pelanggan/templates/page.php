@@ -8,6 +8,9 @@ if(isset($_GET['page'])){
 		case 'dashboard':
 			include_once 'pelanggan/dashboard/index.php';
 			break;
+		case 'paket_pernikahan':
+			include_once 'pelanggan/menu/paket_pernikahan.php';
+			break;
 		default:
 			include_once 'pelanggan/templates/homepage.php';
 			break;

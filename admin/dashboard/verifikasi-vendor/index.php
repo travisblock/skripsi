@@ -56,6 +56,7 @@
                                             </div>
                                             <div class="modal-body">
 																								<p>Username : <?= $vendor['username']; ?></p>
+																								<p>Email: <?= $vendor['email']; ?>
                                                 <p>Nama Vendor : <?= $vendor['nama_vendor']; ?></p>
                                                 <p>Pemilik : <?= $vendor['nama_pemilik']; ?></p>
                                                 <p>KTP: <img src="../img/<?= $vendor['ktp']; ?>" style="width:50%"></p>

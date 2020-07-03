@@ -1,3 +1,7 @@
+<?php
+	include_once '../additional/flash.php';
+	session_start();
+?>
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -13,10 +17,14 @@
     <title>Login Admin</title>
     <!-- Custom CSS -->
     <link href="../assets/dist/css/style.min.css" rel="stylesheet">
+		<link href="../assets/css/notify.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="main-wrapper">
+			<div class="notify pb-5">
+				<?php echo Msg::show();?>
+			</div>
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
             >
             <div class="auth-box row">
@@ -67,6 +75,7 @@
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js "></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
+		<script src="../assets/js/sc.js"></script>
 </body>
 
 </html>

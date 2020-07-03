@@ -2,6 +2,7 @@
 
 if (!empty($_POST)) {
 	require_once '../../koneksi/koneksi.php';
+	include_once '../../additional/flash.php';
 	$username = mysqli_real_escape_string($conn, $_POST['username']);
 	$password = md5($_POST['password']);
 
@@ -16,9 +17,15 @@ if (!empty($_POST)) {
 		header('location: ../dashboard');
 
 	} else {
-		echo "<script>alert('Login gagal cek username password anda');window.location.href='../index.php';</script>";
+		session_start();
+		Msg::setMsg('error', 'Login gagal, username / password salah');
+		header('location: ../index.php');
+		exit();
 	}
 
 } else {
+	session_start();
+	Msg::setMsg('error', 'Login gagal, username / password salah');
 	header('location: ../index.php');
+	exit();
 }

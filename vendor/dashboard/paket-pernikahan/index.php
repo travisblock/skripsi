@@ -54,7 +54,7 @@
 
 																						<div class="modal-body"></div>
 
-																								<form class="pl-3 pr-3" method="POST" action="paket-pernikahan/edit.php">
+																								<form class="pl-3 pr-3" method="POST" action="paket-pernikahan/edit.php" enctype="multipart/form-data">
 																									<input type="hidden" name="id_paket" value="<?= $paket['id_paket']; ?>">
 																										<div class="form-group">
 																												<label for="username">Nama Paket</label>
@@ -66,6 +66,11 @@
 																												<label for="duid">Harga</label>
 																												<input class="form-control" type="text" id="duid"
 																														required="" name="harga" laceholder="Harga" value="<?= $paket['harga']; ?>">
+																										</div>
+
+																										<div class="form-group">
+																												<label for="duid">Foto</label>
+																												<input class="form-control" type="file" name="foto">
 																										</div>
 
 																										<div class="form-group">
@@ -103,7 +108,7 @@
 
 							<div class="modal-body"></div>
 
-									<form class="pl-3 pr-3" method="POST" action="paket-pernikahan/tambah.php">
+									<form class="pl-3 pr-3" method="POST" action="paket-pernikahan/tambah.php" enctype="multipart/form-data">
 
 											<div class="form-group">
 													<label for="username">Nama Paket</label>
@@ -115,6 +120,11 @@
 													<label for="duid">Harga</label>
 													<input class="form-control" type="text" id="duidx"
 															required="" name="harga" laceholder="Harga">
+											</div>
+
+											<div class="form-group">
+													<label for="duid">Foto</label>
+													<input class="form-control" type="file" name="foto">
 											</div>
 
 											<div class="form-group">

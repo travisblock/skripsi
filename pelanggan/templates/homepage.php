@@ -56,7 +56,7 @@
 <!--slider area end-->
 
 <!--shipping area start-->
-<!-- <section class="shipping_area mb-70">
+<section class="shipping_area mb-70">
 	<div class="container">
 		<div class=" row">
 			<div class="col-lg-3 col-md-6">
@@ -105,7 +105,7 @@
 			</div>
 		</div>
 	</div>
-</section> -->
+</section>
 <!--shipping area end-->
 
 <!--banner area start-->
@@ -150,70 +150,43 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="section_title">
-					<h2>Hot Deals Products</h2>
+					<h2>Daftar vendor yang bergabung</h2>
 				</div>
 			</div>
 		</div>
-		<div class="product_carousel product_column5 owl-carousel">
+		<div class="product_carouselz product_column5 owl-carousel">
+			<?php
+				require_once 'koneksi/koneksi.php';
+
+				$sqlvendor = mysqli_query($conn, "SELECT * FROM vendor WHERE status=1");
+				foreach ($sqlvendor as $v):
+			?>
 			<article class="single_product">
 				<figure>
 					<div class="product_thumb">
-						<a class="primary_img" href="product-countdown.html"
-							><img src="assets/img/product/product1.jpg" alt=""
-						/></a>
+						<a class="primary_img" href="product-countdown.html"><img src="assets/img/product/product1.jpg" alt=""/></a>
 
-						<a class="secondary_img" href="product-countdown.html"
-							><img src="assets/img/product/product2.jpg" alt=""
-						/></a>
-
-						<div class="label_product">
-							<span class="label_sale">sale</span>
-						</div>
-						<div class="action_links">
-							<ul>
-								<li class="wishlist">
-									<a href="wishlist.html" title="Add to Wishlist"
-										><i class="fa fa-heart-o" aria-hidden="true"></i
-									></a>
-								</li>
-								<li class="compare">
-									<a href="#" title="compare"
-										><span class="ion-levels"></span
-									></a>
-								</li>
-								<li class="quick_button">
-									<a
-										href="#"
-										data-toggle="modal"
-										data-target="#modal_box"
-										title="quick view"
-									>
-										<span class="ion-ios-search-strong"></span
-									></a>
-								</li>
-							</ul>
-						</div>
-						<div class="add_to_cart">
-							<a href="cart.html" title="add to cart">Add to cart</a>
-						</div>
-						<div class="product_timing">
-							<div data-countdown="2023/12/15"></div>
-						</div>
-					</div>
 					<figcaption class="product_content">
-						<div class="price_box">
-							<span class="old_price">$86.00</span>
-							<span class="current_price">$79.00</span>
-						</div>
 						<h3 class="product_name">
-							<a href="product-countdown.html"
-								>Natus erro at congue massa commodo sit</a
-							>
+							<a href="product-countdown.html"><?= $v['nama_vendor']; ?></a>
 						</h3>
 					</figcaption>
 				</figure>
 			</article>
-			<article class="single_product">
+		<?php endforeach; ?>
+			<!-- <article class="single_product">
+				<figure>
+					<div class="product_thumb">
+						<a class="primary_img" href="product-countdown.html"><img src="assets/img/product/product3.jpg" alt=""/></a>
+
+					<figcaption class="product_content">
+						<h3 class="product_name">
+							<a href="product-countdown.html">Vendorku</a>
+						</h3>
+					</figcaption>
+				</figure>
+			</article> -->
+			<!-- <article class="single_product">
 				<figure>
 					<div class="product_thumb">
 						<a class="primary_img" href="product-countdown.html"
@@ -560,14 +533,14 @@
 						</h3>
 					</figcaption>
 				</figure>
-			</article>
+			</article> -->
 		</div>
 	</div>
 </section>
 <!--product area end-->
 
 <!--banner area start-->
-<div class="banner_area mb-40">
+<!-- <div class="banner_area mb-40">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6">
@@ -590,7 +563,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 <!--banner area end-->
 
 <!--top- category area start-->

@@ -1,3 +1,7 @@
+<?php
+include_once '../additional/flash.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -13,11 +17,12 @@
     <title>Pendaftaran Vendor</title>
     <!-- Custom CSS -->
     <link href="../assets/dist/css/style.min.css" rel="stylesheet">
+		<link href="../assets/css/notify.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="main-wrapper">
-
+				<?= Msg::show(); ?>
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
             style="background:url(../assets/images/big/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box row text-center">
@@ -36,6 +41,11 @@
 																<div class="col-lg-12">
                                     <div class="form-group">
                                         <input class="form-control" type="password" name="password" placeholder="Password" required>
+                                    </div>
+                                </div>
+																<div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="email" placeholder="Email" required>
                                     </div>
                                 </div>
 																<div class="col-lg-12">
@@ -80,6 +90,7 @@
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js "></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
+		<script src="../assets/js/sc.js"></script>
 </body>
 
 </html>
