@@ -1,6 +1,6 @@
 <?php
 
-if(!empty($_POST)){
+if (!empty($_POST)) {
 
 	require_once '../../../koneksi/koneksi.php';
 
@@ -13,25 +13,24 @@ if(!empty($_POST)){
 	$foto_tmp 				= $_FILES['foto']['tmp_name'];
 	$foto_ext 				= pathinfo($foto, PATHINFO_EXTENSION);
 	$foto_path				= "../../../assets/images/paket/";
-	if($foto) {
+	if ($foto) {
 		if ($foto_ext === 'png' || $foto_ext === 'jpg' || $foto_ext === 'jpeg') {
 			$foto_new = explode('.', $foto);
-			$foto_new = $foto_new[0].'-'.uniqid(true).'.' . end($foto_new);
+			$foto_new = $foto_new[0] . '-' . uniqid(true) . '.' . end($foto_new);
 
-			if (move_uploaded_file($foto_tmp, $foto_path . '/' . $foto_new)){
+			if (move_uploaded_file($foto_tmp, $foto_path . '/' . $foto_new)) {
 				$edit = mysqli_query($conn, "UPDATE paket_pernikahan SET nama='$nama', harga='$harga', foto_paket='$foto_new', keterangan='$ket' WHERE id_paket=$idpaket ");
 
 				echo "<script>alert('Paket pernikahan berhasil diedit');
 				window.location.href='../index.php?page=paket';
 				</script>";
 			}
-
 		} else {
 			echo "<script>alert('Foto harus png/jpg/jpeg');
 			window.location.href='../index.php?page=paket';
 			</script>";
 		}
-	}else{
+	} else {
 
 		$edit = mysqli_query($conn, "UPDATE paket_pernikahan SET nama='$nama', harga='$harga', keterangan='$ket' WHERE id_paket=$idpaket ");
 
@@ -45,7 +44,6 @@ if(!empty($_POST)){
 			</script>";
 		}
 	}
-
 } else {
 	header('location: ../index.php?page=paket');
 }

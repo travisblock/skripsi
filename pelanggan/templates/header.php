@@ -9,20 +9,18 @@
 				</div>
 				<div class="Offcanvas_menu_wrapper">
 					<div class="canvas_close">
-						<a href="javascript:void(0)"
-							><i class="ion-android-close"></i
-						></a>
+						<a href="javascript:void(0)"><i class="ion-android-close"></i></a>
 					</div>
 
 					<!-- WISHLIST & CART -->
 					<div class="middel_right_info">
 						<?php
-							session_start();
-							if(!isset($_SESSION['login_pelanggan'])) {
-								include 'keranjang_belum_login.php';
-							} else {
-								include 'keranjang_sudah_login.php';
-							}
+						session_start();
+						if (!isset($_SESSION['login_pelanggan'])) {
+							include 'keranjang_belum_login.php';
+						} else {
+							include 'keranjang_sudah_login.php';
+						}
 						?>
 					</div>
 					<!-- WISHLIST & CART -->
@@ -32,21 +30,16 @@
 						<ul class="offcanvas_main_menu">
 
 							<!-- Navbar -->
-								<li><a href="/">Home</a></li>
-								<li><a href="?page=paket_pernikahan">Paket Pernikahan</a></li>
-								<li><a href="?page=vendor">Vendor</a></li>
-								<li><a href="?page=contact">Contact</a></li>
+							<li><a href="?page=default">Home</a></li>
+							<li><a href="?page=paket_pernikahan">Paket Pernikahan</a></li>
+							<li><a href="?page=contact">Contact</a></li>
 							<!-- Navbar -->
 
 						</ul>
 					</div>
 
 					<div class="Offcanvas_footer">
-						<span
-							><a href="#"
-								><i class="fa fa-envelope-o"></i> info@yourdomain.com</a
-							></span
-						>
+						<span><a href="#"><i class="fa fa-envelope-o"></i> info@yourdomain.com</a></span>
 						<ul>
 							<li class="facebook">
 								<a href="#"><i class="fa fa-facebook"></i></a>
@@ -73,6 +66,21 @@
 
 
 <header>
+	<div class="header_top">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6 col-md-6">
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="top_right text-right">
+						<ul>
+							<li><a href="vendor/register.php"> Menjadi vendor </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="main_header">
 		<!--header top start-->
 		<div class="header_top">
@@ -88,9 +96,7 @@
 				<div class="row align-items-center">
 					<div class="col-lg-3 col-md-6">
 						<div class="logo">
-							<a href="index.html"
-								><img src="assets/img/logo/logo.png" alt=""
-							/></a>
+							<a href="index.html"><img src="assets/img/logo/logo.png" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-lg-9 col-md-6">
@@ -100,11 +106,11 @@
 							<!-- WISHLIST & CART -->
 							<div class="middel_right_info">
 								<?php
-									if(!isset($_SESSION['login_pelanggan'])) {
-										include 'keranjang_belum_login.php';
-									} else {
-										include 'keranjang_sudah_login.php';
-									}
+								if (!isset($_SESSION['login_pelanggan'])) {
+									include 'keranjang_belum_login.php';
+								} else {
+									include 'keranjang_sudah_login.php';
+								}
 								?>
 							</div>
 							<!-- WISHLIST & CART -->
@@ -124,12 +130,11 @@
 							<nav>
 								<ul>
 
-										<!-- Navbar -->
-											<li><a href="/">Home</a></li>
-											<li><a href="?page=paket_pernikahan">Paket Pernikahan</a></li>
-											<li><a href="?page=vendor">Vendor</a></li>
-											<li><a href="?page=contact">Contact</a></li>
-										<!-- Navbar -->
+									<!-- Navbar -->
+									<li><a href="?page=default">Home</a></li>
+									<li><a href="?page=paket_pernikahan">Paket Pernikahan</a></li>
+									<li><a href="?page=contact">Contact</a></li>
+									<!-- Navbar -->
 
 								</ul>
 							</nav>
